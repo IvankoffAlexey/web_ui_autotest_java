@@ -13,20 +13,20 @@ public class SeleniumStart {
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://google.com");
-        Thread.sleep(30);
+        Thread.sleep(3000);
         driver.quit();
 
         WebDriverManager.operadriver().setup();
         WebDriver oDriver = new OperaDriver();
         oDriver.get("https://ya.ru");
-        Thread.sleep(30);
+        Thread.sleep(3000);
 
         oDriver.quit();
 
         WebDriverManager.edgedriver().setup();
         WebDriver eDriver = new EdgeDriver();
         eDriver.get("https://ya.ru");
-        Thread.sleep(30);
+        Thread.sleep(3000);
 
         eDriver.quit();
 

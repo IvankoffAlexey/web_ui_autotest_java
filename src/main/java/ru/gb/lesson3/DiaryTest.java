@@ -1,10 +1,7 @@
 package ru.gb.lesson3;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,6 +14,7 @@ public class DiaryTest {
     public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+
         driver.get("https://diary.ru/");
 
         /* WebElement loginButton = driver.findElement(By.xpath("//a[.='Вход']"));
@@ -46,7 +44,7 @@ public class DiaryTest {
 
         String postName = "Post" + System.currentTimeMillis();
 
-        //Thread.sleep(1000);
+        Thread.sleep(5000);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("postTitle")));
 
@@ -63,6 +61,5 @@ public class DiaryTest {
 
         Thread.sleep(20000);
         driver.quit();
-
     }
 }

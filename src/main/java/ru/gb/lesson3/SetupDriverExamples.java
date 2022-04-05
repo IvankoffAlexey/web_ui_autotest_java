@@ -28,7 +28,8 @@ public class SetupDriverExamples {
 
         List<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
-        Thread.sleep(2000);
+        driver.get("http://horza.ru");
+        Thread.sleep(3000);
         driver.close();
 
 
