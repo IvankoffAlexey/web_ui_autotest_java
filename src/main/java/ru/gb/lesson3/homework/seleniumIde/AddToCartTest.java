@@ -26,7 +26,7 @@ public class AddToCartTest {
         driver.findElement(By.xpath("//a[@data-id-product='1']")).click();
         driver.findElement(By.xpath("//*[@title=\'Continue shopping\']")).click();
         driver.findElement(By.xpath("//a[@data-id-product='2']")).click();
-        driver.findElement(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span")).click();
+        driver.findElement(By.xpath("//*[@title=\'Continue shopping\']")).click();
         driver.findElement(By.xpath("//a[@data-id-product='3']")).click();
         driver.findElement(By.xpath("//*[@title=\'Proceed to checkout\']")).click();
         driver.findElement(By.id("3_13_0_670399")).click();
