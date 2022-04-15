@@ -6,6 +6,8 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.gb.lesson4.homework.SqTriangle;
 import ru.gb.lesson4.homework.Triangle;
 
@@ -14,10 +16,15 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SqTriangleTest {
+    private static Logger logger = LoggerFactory.getLogger("SqTriangleTest");
     @BeforeAll
     static void beforeAll() {
         System.out.println("Метод выполнится 1 раз перед всеми тестами");
-
+        logger.error("error log");
+        logger.warn("warn log");
+        logger.info("info log");
+        logger.debug("debug log");
+        logger.trace("trace log");
     }
 
     @BeforeEach
