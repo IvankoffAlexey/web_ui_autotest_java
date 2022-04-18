@@ -1,4 +1,4 @@
-package ru.gb.lesson4;
+package ru.gb.lesson4.homeworkTest;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
