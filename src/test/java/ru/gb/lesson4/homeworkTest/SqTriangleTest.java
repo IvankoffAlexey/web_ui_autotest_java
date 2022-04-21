@@ -1,5 +1,6 @@
 package ru.gb.lesson4.homeworkTest;
-
+import ru.gb.lesson4.homework.SqTriangle;
+import ru.gb.lesson4.homework.Triangle;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -8,8 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.gb.lesson4.homework.SqTriangle;
-import ru.gb.lesson4.homework.Triangle;
+
 
 import java.util.stream.Stream;
 

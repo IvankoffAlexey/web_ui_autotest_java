@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 
 public class CrmForHorza {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         System.out.println("* * * Кратко о сценарии: * * * \n" +                                // Ожидаемый результат
                 "1. Открываем страницу по адресу http://horza.ru\n" +                           // Открыта страница http://horza.ru
                 "2. Авторизация метод №1 \n" +
