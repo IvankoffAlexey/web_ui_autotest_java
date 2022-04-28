@@ -38,13 +38,13 @@
 <!--      <version>1.7.36</version>-->
 <!--      <scope>test</scope>-->
 <!--    </dependency>-->
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.slf4j/slf4j-nop &ndash;&gt;-->
+<!--&lt;!&ndash;   https://mvnrepository.com/artifact/org.slf4j/slf4j-nop &ndash;&gt;-->
 <!--    <dependency>-->
 <!--      <groupId>org.slf4j</groupId>-->
 <!--      <artifactId>slf4j-nop</artifactId>-->
 <!--      <version>1.7.36</version>-->
 <!--      <scope>test</scope>-->
-<!--    </dependency>
+<!--    </dependency>-->
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
