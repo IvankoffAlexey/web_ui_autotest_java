@@ -13,7 +13,6 @@ public class MainPage extends BaseView {
     @FindBy(xpath = "//a[@class='login']")
     public WebElement signInButton;
 
-
     public LoginPage clickSignInButton(){
 
         signInButton.click();

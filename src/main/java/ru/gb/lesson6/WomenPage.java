@@ -10,12 +10,25 @@ import java.time.Duration;
 import java.util.List;
 
 public class WomenPage extends BaseView{
-    public WomenPage(WebDriver driver) {
-        super(driver);
-    }
 
     @FindBy(xpath = "//span[.='Categories']/ancestor::div[@class='layered_filter']//a")
     private List<WebElement> categoriesList;
+
+    @FindBy(xpath = "//span[.='Color']/ancestor::div[@class='layered_filter']//a")
+    private List<WebElement> colorsList;
+
+    @FindBy(xpath = "//span[.='Size']/ancestor::div[@class='layered_filter']//a")
+    private List<WebElement> sizesList;
+
+    @FindBy(xpath = "//ul[contains(@class, 'product_list')]/li")
+    private List<WebElement> productList;
+
+    @FindBy(xpath = "//span[contains(.,'Add to cart')]")
+    private WebElement addToCartButton;
+
+    public WomenPage(WebDriver driver) {
+        super(driver);
+    }
 
     public WomenPage selectCategoriesInFilters(String categories) {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -23,17 +36,11 @@ public class WomenPage extends BaseView{
         return this;
     }
 
-    @FindBy(xpath = "//span[.='Color']/ancestor::div[@class='layered_filter']//a")
-    private List<WebElement> colorsList;
-
     public WomenPage selectColorInFilters(String color) {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("enabled_filters")));
         colorsList.stream().filter(s -> s.getText().contains(color)).findFirst().get().click();
         return this;
     }
-
-    @FindBy(xpath = "//span[.='Size']/ancestor::div[@class='layered_filter']//a")
-    private List<WebElement> sizesList;
 
     public WomenPage selectSizeInFilters(String size) {
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -42,20 +49,15 @@ public class WomenPage extends BaseView{
         return this;
     }
 
-    @FindBy(xpath = "//ul[contains(@class, 'product_list')]/li")
-    private List<WebElement> productList;
-
-    @FindBy(xpath = "//span[contains(.,'Add to cart')]")
-    private WebElement addToCartButton;
-
     public ConfirmBlock hoverAndClickAddToCartProductByName(String productName) {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        //webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='enabled_filters']//li[contains(.,'Size')]")));
         actions.moveToElement(productList.stream().filter(s -> s.getText().contains(productName))
                 .findFirst()
                 .get())
                 .build()
                 .perform();
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='enabled_filters']//li[contains(.,'Size')]")));
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(.,'Add to cart')]")));
         addToCartButton.click();
         return new ConfirmBlock(driver);
     }

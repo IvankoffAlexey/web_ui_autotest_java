@@ -24,7 +24,7 @@ public class LoginPage extends BaseView {
     private WebElement submitButton;
 
     public SuggestBlock login(String email, String passwd){
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         emailField.sendKeys(email);
         passwdField.sendKeys(passwd);
         submitButton.click();

@@ -1,10 +1,9 @@
 package ru.gb.lesson6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.time.Duration;
 import java.util.List;
 
 public class TShirtsPage extends BaseView{
@@ -16,8 +15,8 @@ public class TShirtsPage extends BaseView{
     private List<WebElement> sizesList;
 
     public TShirtsPage selectSizeInFilters(String size) {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        sizesList.stream().filter(s -> s.getText().contains(size)).findFirst().get().click();
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        sizesList.stream().filter(s -> s.getText().contains(size)).findAny().get().click();
         return this;
     }
 
@@ -26,11 +25,10 @@ public class TShirtsPage extends BaseView{
 
     @FindBy(xpath = "//span[contains(.,'Add to cart')]")
     private WebElement addToCartButton;
-
+@Step("6")
     public ConfirmBlock hoverAndClickAddToCartProductByName(String productName) {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         actions.moveToElement(productList.stream().filter(s -> s.getText().contains(productName))
-                .findFirst()
+                .findAny()
                 .get())
                 .build()
                 .perform();
